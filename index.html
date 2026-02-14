@@ -1,1 +1,1077 @@
+<!DOCTYPE html>
 
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Syed Rehan — Digital Creator & Agency Owner</title>
+<meta name="description" content="Syed Rehan — Web Developer, Video Editor, Graphic Designer & SMM Agency Owner, India.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Outfit:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+:root{
+  --deep:#03020A;
+  --glass-bg:rgba(255,255,255,0.07);
+  --glass-hover:rgba(255,255,255,0.11);
+  --glass-border:rgba(255,255,255,0.16);
+  --glass-border-hi:rgba(255,255,255,0.30);
+  --shine:linear-gradient(135deg,rgba(255,255,255,0.18) 0%,rgba(255,255,255,0) 60%);
+  --text:#fff;
+  --text-mid:rgba(255,255,255,0.58);
+  --text-dim:rgba(255,255,255,0.32);
+  --violet:#8B5CF6;
+  --cyan:#06B6D4;
+  --rose:#F43F5E;
+  --amber:#F59E0B;
+  --grad-vc:linear-gradient(135deg,#8B5CF6,#06B6D4);
+  --grad-ra:linear-gradient(135deg,#F43F5E,#F59E0B);
+  --grad-aurora:linear-gradient(135deg,#8B5CF6 0%,#06B6D4 35%,#F43F5E 70%,#F59E0B 100%);
+  --grad-plat:linear-gradient(135deg,#fff 0%,rgba(139,92,246,.85) 40%,rgba(6,182,212,.85) 70%,#fff 100%);
+  --ease:cubic-bezier(0.23,1,0.32,1);
+  --spring:cubic-bezier(0.34,1.56,0.64,1);
+  --r:18px; --r2:26px; --r3:36px;
+  --font-d:'Playfair Display',Georgia,serif;
+  --font-b:'Outfit',sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{font-family:var(--font-b);background:var(--deep);color:var(--text);overflow-x:hidden;cursor:none}
+::selection{background:rgba(139,92,246,.4);color:#fff}
+::-webkit-scrollbar{width:3px}
+::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb{background:rgba(139,92,246,.5);border-radius:2px}
+
+/* AURORA BG */
+#bg{position:fixed;inset:0;z-index:0;overflow:hidden;background:var(–deep)}
+.blob{position:absolute;border-radius:50%;filter:blur(90px);animation:bmorphs 18s ease-in-out infinite;will-change:transform}
+.b1{width:700px;height:700px;background:radial-gradient(circle,rgba(139,92,246,.22),transparent 70%);top:-10%;left:-8%;animation-duration:20s}
+.b2{width:600px;height:600px;background:radial-gradient(circle,rgba(6,182,212,.18),transparent 70%);top:20%;right:-8%;animation-duration:25s;animation-delay:-6s}
+.b3{width:500px;height:500px;background:radial-gradient(circle,rgba(244,63,94,.14),transparent 70%);bottom:5%;left:15%;animation-duration:22s;animation-delay:-12s}
+.b4{width:400px;height:400px;background:radial-gradient(circle,rgba(245,158,11,.12),transparent 70%);bottom:-8%;right:15%;animation-duration:28s;animation-delay:-3s}
+@keyframes bmorphs{0%,100%{transform:translate(0,0) scale(1)}25%{transform:translate(40px,-50px) scale(1.07)}50%{transform:translate(-25px,35px) scale(.93)}75%{transform:translate(50px,20px) scale(1.04)}}
+#noise{position:fixed;inset:0;z-index:1;background-image:url(“data:image/svg+xml,%3Csvg viewBox=‘0 0 512 512’ xmlns=‘http://www.w3.org/2000/svg’%3E%3Cfilter id=‘n’%3E%3CfeTurbulence type=‘fractalNoise’ baseFrequency=‘0.75’ numOctaves=‘4’ stitchTiles=‘stitch’/%3E%3C/filter%3E%3Crect width=‘100%25’ height=‘100%25’ filter=‘url(%23n)’/%3E%3C/svg%3E”);opacity:.03;pointer-events:none}
+
+/* CURSOR */
+#cd{width:7px;height:7px;border-radius:50%;background:#fff;position:fixed;z-index:99999;pointer-events:none;transform:translate(-50%,-50%);box-shadow:0 0 12px rgba(255,255,255,.8);transition:width .2s,height .2s,background .3s}
+#cg{width:44px;height:44px;border-radius:50%;background:radial-gradient(circle,rgba(139,92,246,.25),transparent 70%);position:fixed;z-index:99998;pointer-events:none;transform:translate(-50%,-50%);transition:transform .5s var(–ease),width .3s,height .3s}
+.hov #cd{width:16px;height:16px;background:rgba(139,92,246,.9);box-shadow:0 0 20px rgba(139,92,246,.6)}
+.hov #cg{width:90px;height:90px}
+
+/* SCROLL TOP */
+#st{position:fixed;bottom:28px;right:28px;z-index:100;width:48px;height:48px;border-radius:50%;background:rgba(255,255,255,.07);backdrop-filter:blur(20px);border:1px solid var(–glass-border);color:rgba(255,255,255,.75);font-size:1rem;display:flex;align-items:center;justify-content:center;cursor:pointer;opacity:0;pointer-events:none;transform:translateY(12px);transition:opacity .3s,transform .3s,background .3s,box-shadow .3s;box-shadow:0 8px 24px rgba(0,0,0,.3)}
+#st.show{opacity:1;pointer-events:all;transform:none}
+#st:hover{background:rgba(139,92,246,.3);box-shadow:0 0 24px rgba(139,92,246,.4)}
+
+/* LOADER */
+#loader{position:fixed;inset:0;z-index:100000;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0;background:var(–deep);transition:opacity 1.2s var(–ease),visibility 1.2s;overflow:hidden}
+#loader.out{opacity:0;visibility:hidden;pointer-events:none}
+.lb1{position:absolute;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(139,92,246,.2),transparent 70%);filter:blur(80px);top:0;left:0;animation:bmorphs 7s ease-in-out infinite}
+.lb2{position:absolute;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(6,182,212,.15),transparent 70%);filter:blur(60px);bottom:0;right:0;animation:bmorphs 9s ease-in-out infinite reverse}
+.lglass{position:relative;z-index:2;background:rgba(255,255,255,.07);backdrop-filter:blur(40px) saturate(200%);border:1px solid rgba(255,255,255,.18);border-radius:var(–r2);padding:52px 72px;display:flex;flex-direction:column;align-items:center;gap:26px;box-shadow:0 40px 80px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.18)}
+.lglass::before{content:’’;position:absolute;top:0;left:20%;right:20%;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.4),transparent)}
+.lglass::after{content:’’;position:absolute;top:0;left:0;width:55%;height:45%;background:linear-gradient(135deg,rgba(255,255,255,.12),transparent);border-radius:var(–r2) var(–r2) 0 0;pointer-events:none}
+.lrings{position:relative;width:100px;height:100px;display:flex;align-items:center;justify-content:center}
+.lr{position:absolute;border-radius:50%;border:1.5px solid transparent}
+.lr1{width:100px;height:100px;border-color:rgba(139,92,246,.65) transparent rgba(6,182,212,.4) transparent;animation:rspin 2s linear infinite;box-shadow:0 0 20px rgba(139,92,246,.25)}
+.lr2{width:76px;height:76px;border-color:transparent rgba(6,182,212,.6) transparent rgba(244,63,94,.4);animation:rspin 1.5s linear infinite reverse}
+.lr3{width:52px;height:52px;border-color:rgba(244,63,94,.5) transparent rgba(245,158,11,.4) transparent;animation:rspin 3s linear infinite}
+@keyframes rspin{from{transform:rotate(0)}to{transform:rotate(360deg)}}
+.lrc{width:30px;height:30px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.9),rgba(139,92,246,.5));box-shadow:0 0 20px rgba(139,92,246,.6),0 0 40px rgba(6,182,212,.3);animation:lpulse 2s ease-in-out infinite}
+@keyframes lpulse{0%,100%{transform:scale(1);opacity:.9}50%{transform:scale(1.35);opacity:1}}
+.lname{font-family:var(–font-d);font-size:2.8rem;font-weight:700;letter-spacing:-.02em;background:var(–grad-plat);background-size:300% 100%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:shimmerx 3s linear infinite}
+/* shimmerx is now defined inline with .hg above */
+@keyframes shimmerx{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+.ltag{font-size:.68rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(–text-dim)}
+.lpwrap{width:220px;display:flex;flex-direction:column;gap:9px}
+.lpbg{width:100%;height:3px;background:rgba(255,255,255,.07);border-radius:3px;overflow:hidden}
+.lpfill{height:3px;background:linear-gradient(90deg,#8B5CF6,#06B6D4,#F43F5E);background-size:200% 100%;border-radius:3px;width:0;animation:lfill 2.8s var(–ease) forwards,shimbar 1.5s linear infinite;box-shadow:0 0 10px rgba(139,92,246,.7)}
+@keyframes lfill{to{width:100%}}
+@keyframes shimbar{0%{background-position:0 0}100%{background-position:200% 0}}
+.lpct{font-size:.7rem;font-weight:600;letter-spacing:.08em;color:var(–text-dim);text-align:center;font-variant-numeric:tabular-nums}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:18px 5%;transition:padding .5s var(–ease)}
+nav.stuck{padding:12px 5%}
+.ni{max-width:1300px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;background:rgba(255,255,255,.06);backdrop-filter:blur(32px) saturate(180%);border:1px solid var(–glass-border);border-radius:24px;padding:10px 10px 10px 28px;box-shadow:0 8px 32px rgba(0,0,0,.3),inset 0 1px 0 rgba(255,255,255,.1);transition:background .4s,box-shadow .4s;position:relative}
+.ni::before{content:’’;position:absolute;top:0;left:25%;right:25%;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.28),transparent);border-radius:24px;pointer-events:none}
+nav.stuck .ni{background:rgba(255,255,255,.09);box-shadow:0 16px 48px rgba(0,0,0,.4),inset 0 1px 0 rgba(255,255,255,.14)}
+.logo{font-family:var(–font-d);font-size:1.3rem;font-weight:700;color:#fff;text-decoration:none;display:flex;align-items:center;gap:10px;letter-spacing:-.01em}
+.lgem{width:9px;height:9px;border-radius:50%;background:radial-gradient(circle,#06B6D4,#8B5CF6);box-shadow:0 0 12px rgba(6,182,212,.8);animation:gpulse 2.5s ease-in-out infinite}
+@keyframes gpulse{0%,100%{box-shadow:0 0 10px rgba(6,182,212,.8)}50%{box-shadow:0 0 22px rgba(139,92,246,.9),0 0 40px rgba(6,182,212,.4)}}
+.nl{display:flex;gap:4px;list-style:none}
+.nl a{color:var(–text-mid);text-decoration:none;font-size:.8rem;font-weight:500;padding:8px 16px;border-radius:60px;transition:color .3s,background .3s;letter-spacing:.02em}
+.nl a:hover{color:#fff;background:rgba(255,255,255,.08)}
+.nhire{background:rgba(139,92,246,.22) !important;border:1px solid rgba(139,92,246,.4);color:#fff !important;padding:10px 22px !important;border-radius:60px;font-weight:600 !important;display:inline-flex !important;align-items:center !important;gap:8px !important;transition:background .3s,box-shadow .3s,transform .3s !important}
+.nhire:hover{background:rgba(139,92,246,.42) !important;box-shadow:0 0 28px rgba(139,92,246,.5) !important;transform:translateY(-1px) !important}
+.hbg{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px;position:relative;z-index:1;border:none;background:none}
+.hbg span{display:block;width:22px;height:1.5px;background:var(–text-mid);border-radius:2px;transition:transform .35s var(–ease),opacity .25s,background .3s}
+/* Hamburger → X animation when menu is open */
+.hbg.active span:nth-child(1){transform:translateY(6.5px) rotate(45deg);background:#fff}
+.hbg.active span:nth-child(2){opacity:0;transform:scaleX(0)}
+.hbg.active span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg);background:#fff}
+
+/* Mobile menu overlay backdrop */
+.mnav-backdrop{
+display:none;
+position:fixed;inset:0;
+z-index:997;
+background:transparent;
+cursor:pointer;
+}
+.mnav-backdrop.open{display:block}
+
+/* Mobile nav panel — slides in from right */
+.mnav{
+display:flex;        /* always flex so transition works */
+visibility:hidden;
+opacity:0;
+pointer-events:none;
+position:fixed;
+top:0;right:0;bottom:0;
+width:min(320px, 85vw);
+z-index:998;
+background:rgba(6,4,20,.97);
+backdrop-filter:blur(40px) saturate(160%);
+border-left:1px solid rgba(255,255,255,.1);
+flex-direction:column;
+align-items:flex-start;
+justify-content:center;
+gap:8px;
+padding:48px 40px;
+transform:translateX(100%);
+transition:transform .4s var(–ease), opacity .35s var(–ease), visibility .4s;
+box-shadow:-20px 0 60px rgba(0,0,0,.6);
+}
+.mnav.open{
+visibility:visible;
+opacity:1;
+pointer-events:all;
+transform:translateX(0);
+}
+
+/* Close (X) button inside nav panel */
+.mnav-close{
+position:absolute;
+top:22px;right:22px;
+width:40px;height:40px;
+border-radius:12px;
+background:rgba(255,255,255,.07);
+border:1px solid rgba(255,255,255,.12);
+color:rgba(255,255,255,.7);
+font-size:1rem;
+display:flex;align-items:center;justify-content:center;
+cursor:pointer;
+transition:background .3s,color .3s,transform .3s var(–spring);
+}
+.mnav-close:hover{background:rgba(255,255,255,.14);color:#fff;transform:scale(1.08) rotate(90deg)}
+
+/* Nav links */
+.mnav a{
+font-family:var(–font-d);
+font-size:2rem;
+font-weight:400;
+font-style:italic;
+color:rgba(255,255,255,.7);
+text-decoration:none;
+padding:10px 0;
+width:100%;
+border-bottom:1px solid rgba(255,255,255,.06);
+transition:color .3s,padding-left .3s var(–ease);
+letter-spacing:-.01em;
+}
+.mnav a:last-of-type{border-bottom:none}
+.mnav a:hover{color:#fff;padding-left:10px}
+
+/* Social strip at bottom of mobile nav */
+.mnav-foot{
+position:absolute;
+bottom:36px;left:40px;right:40px;
+display:flex;gap:10px;
+}
+.mnav-foot a{
+width:36px;height:36px;
+border-radius:11px;
+background:rgba(255,255,255,.05);
+border:1px solid rgba(255,255,255,.1);
+display:flex;align-items:center;justify-content:center;
+color:var(–text-dim);
+font-size:.82rem;
+text-decoration:none;
+font-style:normal;
+padding:0;
+transition:all .3s var(–ease);
+}
+.mnav-foot a:hover{background:rgba(139,92,246,.24);border-color:rgba(139,92,246,.4);color:rgba(167,139,250,.9);transform:translateY(-2px)}
+
+@media(max-width:860px){.nl{display:none}.hbg{display:flex}}
+
+/* REVEAL */
+/* REVEAL — base */
+.rv{opacity:0;transform:translateY(28px);transition:opacity .9s var(–ease),transform .9s var(–ease)}
+.rv.on{opacity:1;transform:none}
+/* directional variants */
+.rv.fl{transform:translateX(-28px) translateY(0)}
+.rv.fr{transform:translateX(28px) translateY(0)}
+.rv.fl.on,.rv.fr.on{transform:none}
+/* cards that also have hover-transform: reveal only touches opacity so hover still works */
+.skcard.rv,.svccard.rv{opacity:0;transform:translateY(20px)}
+.skcard.rv.on,.svccard.rv.on{opacity:1;transform:none}
+.d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}.d4{transition-delay:.32s}.d5{transition-delay:.40s}
+
+/* SECTION LABEL */
+.slbl{display:inline-flex;align-items:center;gap:9px;font-size:.67rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:rgba(103,232,249,.9);margin-bottom:16px;padding:6px 16px;background:rgba(6,182,212,.08);border:1px solid rgba(6,182,212,.2);border-radius:60px}
+.slbl::before{content:‘◈’;font-size:.58rem}
+
+/* SECTION TITLES */
+.sh{font-family:var(–font-d);font-size:clamp(2.6rem,5.5vw,4.4rem);font-weight:700;line-height:1.0;letter-spacing:-.025em}
+.sh em{font-weight:300;font-style:italic;color:var(–text-mid)}
+.sg{background:var(–grad-aurora);background-size:300%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:shimmerx 8s ease-in-out infinite}
+.svc{background:var(–grad-vc);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.sra{background:var(–grad-ra);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.sub{color:var(–text-mid);font-size:.95rem;line-height:1.85;font-weight:300;margin-top:16px}
+
+/* BUTTONS */
+.bprimary{display:inline-flex;align-items:center;gap:10px;background:rgba(139,92,246,.28);backdrop-filter:blur(20px);border:1px solid rgba(139,92,246,.45);border-radius:60px;color:#fff;font-family:var(–font-b);font-size:.88rem;font-weight:600;padding:15px 32px;text-decoration:none;cursor:pointer;position:relative;overflow:hidden;transition:transform .4s var(–ease),box-shadow .4s,background .4s}
+.bprimary::before{content:’’;position:absolute;inset:0;background:var(–shine);border-radius:60px;pointer-events:none}
+.bprimary::after{content:’’;position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.13),transparent);transition:left .6s;pointer-events:none}
+.bprimary:hover{background:rgba(139,92,246,.5);box-shadow:0 0 40px rgba(139,92,246,.5),0 12px 40px rgba(0,0,0,.3);transform:translateY(-3px) scale(1.02)}
+.bprimary:hover::after{left:100%}
+.boutline{display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,.05);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.14);border-radius:60px;color:var(–text-mid);font-family:var(–font-b);font-size:.88rem;font-weight:500;padding:14px 30px;text-decoration:none;cursor:pointer;transition:all .4s var(–ease)}
+.boutline:hover{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.28);color:#fff;transform:translateY(-3px);box-shadow:0 12px 40px rgba(0,0,0,.3)}
+
+/* HERO */
+#hero{min-height:100vh;display:flex;align-items:center;padding:100px 5% 100px;position:relative;z-index:2;overflow:clip}
+.hgrid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:80px 80px;mask-image:radial-gradient(ellipse 70% 70% at 50% 50%,black 20%,transparent 100%)}
+.hwrap{max-width:1300px;margin:0 auto;width:100%;display:grid;grid-template-columns:1fr 420px;gap:60px;align-items:center}
+
+/* Hero left */
+.hbadge{display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,.06);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.14);border-radius:60px;padding:9px 20px;font-size:.74rem;font-weight:600;letter-spacing:.06em;color:rgba(255,255,255,.68);margin-bottom:36px;animation:fadeup-soft .8s var(–ease) both}
+.bdot{width:6px;height:6px;border-radius:50%;background:#4ADE80;box-shadow:0 0 8px #4ADE80;animation:lpulse 2.5s infinite}
+@keyframes fdup{from{opacity:0;transform:translateY(-16px)}to{opacity:1;transform:none}}
+@keyframes fadeup-soft{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+
+.hh{font-family:var(–font-d);font-size:clamp(3.6rem,9vw,8rem);font-weight:900;line-height:1.12;letter-spacing:-.03em;margin-bottom:28px}
+/* FIX: overflow:visible — never clips tall glyph ascenders like “S”
+padding-top:.12em + margin-top:-.12em = visual buffer without shifting layout */
+.hhl{display:block;overflow:visible;padding-top:.12em;margin-top:-.12em}
+.hhl span{display:block;animation:lup 1s var(–ease) both}
+.hhl:nth-child(1) span{animation-delay:.06s}
+.hhl:nth-child(2) span{animation-delay:.18s}
+.hhl:nth-child(3) span{animation-delay:.30s}
+@keyframes lup{from{transform:translateY(100%);opacity:0}to{transform:translateY(0);opacity:1}}
+.hg{background:var(–grad-plat);background-size:300% 100%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:shimmerx 6s linear infinite;will-change:background-position}
+.ho{-webkit-text-stroke:1.5px rgba(255,255,255,.28);-webkit-text-fill-color:transparent}
+
+.hroles{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px;animation:fadeup-soft .8s .35s var(–ease) both}
+.hrole{display:flex;align-items:center;gap:7px;background:rgba(255,255,255,.05);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.1);border-radius:60px;padding:7px 16px;font-size:.78rem;font-weight:500;color:var(–text-mid);transition:all .4s var(–ease);will-change:transform}
+.hrole i{font-size:.72rem}
+.hrole:hover{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.24);color:#fff;transform:translateY(-2px)}
+
+.hbio{font-size:1.05rem;line-height:1.85;color:var(–text-mid);font-weight:300;max-width:520px;margin-bottom:44px;animation:fadeup-soft .8s .5s var(–ease) both}
+.hbtns{display:flex;gap:14px;flex-wrap:wrap;animation:fadeup-soft .8s .6s var(–ease) both;margin-bottom:52px}
+
+.hstats{display:flex;gap:0;background:rgba(255,255,255,.04);backdrop-filter:blur(20px);border:1px solid var(–glass-border);border-radius:18px;overflow:hidden;animation:fadeup-soft .8s .72s var(–ease) both;max-width:460px}
+.stat{flex:1;padding:20px 24px;border-right:1px solid var(–glass-border);transition:background .3s}
+.stat:last-child{border-right:none}
+.stat:hover{background:rgba(255,255,255,.05)}
+.stn{font-family:var(–font-d);font-size:2rem;font-weight:700;line-height:1;background:var(–grad-vc);-webkit-background-clip:text;-webkit-text-fill-color:transparent;letter-spacing:-.02em}
+.stl{font-size:.64rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(–text-dim);margin-top:4px}
+
+/* Hero portrait */
+.hport{position:relative;display:flex;align-items:center;justify-content:center;animation:fadeup-soft 1s .25s var(–ease) both;will-change:transform}
+.pblob{position:absolute;width:380px;height:380px;border-radius:50%;background:radial-gradient(circle,rgba(139,92,246,.22),rgba(6,182,212,.12),transparent 70%);filter:blur(50px);animation:bmorphs 10s ease-in-out infinite}
+.pglass{width:340px;height:440px;border-radius:24px;background:rgba(255,255,255,.06);backdrop-filter:blur(40px) saturate(200%);border:1px solid var(–glass-border);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;position:relative;z-index:2;overflow:hidden;box-shadow:0 0 0 1px rgba(255,255,255,.07),0 40px 80px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.18),inset 0 -1px 0 rgba(255,255,255,.05)}
+.pglass::before{content:’’;position:absolute;top:0;left:0;width:65%;height:45%;background:linear-gradient(135deg,rgba(255,255,255,.14),transparent);border-radius:24px 0 0 0;pointer-events:none}
+.pglass::after{content:’’;position:absolute;bottom:0;right:0;width:40%;height:28%;background:linear-gradient(135deg,transparent,rgba(139,92,246,.07));border-radius:0 0 24px 0;pointer-events:none}
+.pmono{width:110px;height:110px;border-radius:28px;background:linear-gradient(135deg,rgba(139,92,246,.38),rgba(6,182,212,.28));backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.18);display:flex;align-items:center;justify-content:center;font-family:var(–font-d);font-size:2.8rem;font-weight:700;color:#fff;position:relative;z-index:3;box-shadow:0 20px 60px rgba(0,0,0,.4),0 0 0 1px rgba(255,255,255,.09)}
+.pname{font-family:var(–font-d);font-size:1.3rem;font-weight:700;color:#fff;position:relative;z-index:3;letter-spacing:.01em}
+.psub{font-size:.7rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(–text-dim);position:relative;z-index:3}
+.ploc{display:flex;align-items:center;gap:6px;font-size:.78rem;color:var(–text-dim);position:relative;z-index:3}
+.ploc i{color:rgba(103,232,249,.8)}
+
+/* Orbit badges */
+.ob{position:absolute;background:rgba(255,255,255,.06);backdrop-filter:blur(26px) saturate(180%);border:1px solid rgba(255,255,255,.14);border-radius:14px;padding:10px 16px;display:flex;align-items:center;gap:10px;z-index:5;box-shadow:0 8px 32px rgba(0,0,0,.4),inset 0 1px 0 rgba(255,255,255,.1);white-space:nowrap}
+.ob::before{content:’’;position:absolute;inset:0;background:var(–shine);border-radius:14px;opacity:.6;pointer-events:none}
+.ob1{top:8%;right:-45px;animation:obf 7s ease-in-out infinite 0s}
+.ob2{top:40%;left:-55px;animation:obf 9s ease-in-out infinite 2s}
+.ob3{bottom:16%;right:-38px;animation:obf 8s ease-in-out infinite 4s}
+@keyframes obf{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+.obi{width:32px;height:32px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:.85rem;flex-shrink:0}
+.ov{background:rgba(139,92,246,.22);color:rgba(167,139,250,.9)}
+.oc{background:rgba(6,182,212,.18);color:rgba(103,232,249,.9)}
+.or{background:rgba(244,63,94,.18);color:rgba(251,113,133,.9)}
+.oblbl{font-size:.62rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(–text-dim)}
+.obval{font-size:.85rem;font-weight:700;color:rgba(255,255,255,.9)}
+
+/* Scroll hint — perfectly centred at hero bottom, never overlaps content */
+.scrl{
+position:absolute;
+bottom:28px;
+left:0;
+right:0;
+width:fit-content;
+margin:0 auto;           /* true centering without transform */
+display:flex;
+flex-direction:column;
+align-items:center;
+gap:8px;
+z-index:10;
+pointer-events:none;
+animation:fadeup-soft 1s 1.3s var(–ease) both;
+}
+.smouse{
+width:24px;height:38px;border-radius:12px;
+border:1.5px solid rgba(255,255,255,.25);
+display:flex;align-items:flex-start;justify-content:center;
+padding-top:7px;
+}
+.swheel{
+width:3px;height:8px;border-radius:3px;
+background:rgba(255,255,255,.5);
+animation:sw 2s ease-in-out infinite;
+}
+@keyframes sw{
+0%{transform:translateY(0);opacity:1}
+55%{transform:translateY(12px);opacity:0}
+56%{transform:translateY(0);opacity:0}
+100%{transform:translateY(0);opacity:1}
+}
+.slbl2{font-size:.6rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(–text-dim)}
+
+@media(max-width:960px){.hwrap{grid-template-columns:1fr;gap:40px}.hport{order:-1}.pglass{width:280px;height:360px}.ob{display:none}.hstats{max-width:100%}#hero{padding-top:90px;padding-bottom:90px}}
+/* Prevent horizontal scroll from reveal slide-in on mobile */
+@media(max-width:768px){.rv.fl{transform:translateY(20px)}.rv.fr{transform:translateY(20px)}.rv.fl.on,.rv.fr.on{transform:none}.scrl{bottom:24px}}
+
+/* ABOUT */
+#about{padding:120px 5%;position:relative;z-index:2}
+.ai{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.avf{aspect-ratio:3/4;max-height:520px;background:rgba(255,255,255,.05);backdrop-filter:blur(32px) saturate(180%);border:1px solid var(–glass-border);border-radius:22px;display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative}
+.avf::before{content:’’;position:absolute;inset:0;background:var(–shine);opacity:.5;pointer-events:none}
+.avfi{display:flex;flex-direction:column;align-items:center;gap:16px;padding:40px;text-align:center;position:relative;z-index:2}
+.amr{width:130px;height:130px;border-radius:50%;position:relative;display:flex;align-items:center;justify-content:center}
+.amr::before{content:’’;position:absolute;inset:0;border-radius:50%;background:conic-gradient(from 0deg,#8B5CF6,#06B6D4,#F43F5E,#F59E0B,#8B5CF6);padding:2px;-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask-composite:exclude;animation:rspin 8s linear infinite}
+.am{width:108px;height:108px;border-radius:50%;background:linear-gradient(135deg,rgba(139,92,246,.3),rgba(6,182,212,.2));border:1px solid var(–glass-border);display:flex;align-items:center;justify-content:center;font-family:var(–font-d);font-size:2.4rem;font-weight:700;color:#fff;position:relative;z-index:1}
+.aexp{position:absolute;bottom:-16px;right:-16px;background:rgba(139,92,246,.25);backdrop-filter:blur(24px);border:1px solid rgba(139,92,246,.4);border-radius:18px;padding:18px 22px;text-align:center;box-shadow:0 16px 48px rgba(139,92,246,.3),inset 0 1px 0 rgba(255,255,255,.14)}
+.aexp::before{content:’’;position:absolute;top:0;left:20%;right:20%;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.3),transparent)}
+.aexp .n{font-family:var(–font-d);font-size:2.6rem;font-weight:700;color:#fff;line-height:1}
+.aexp .l{font-size:.62rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-top:3px}
+.atxt{font-size:.93rem;color:var(–text-mid);line-height:1.85;font-weight:300;margin:20px 0}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:22px 0}
+.chip{background:rgba(255,255,255,.05);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.1);border-radius:60px;padding:6px 14px;font-size:.77rem;font-weight:500;color:var(–text-mid);transition:all .3s}
+.chip:hover{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.24);color:#fff}
+.alist{list-style:none;display:flex;flex-direction:column;gap:12px;margin:20px 0}
+.alist li{display:flex;align-items:center;gap:12px;font-size:.9rem;color:var(–text-mid);font-weight:300}
+.alist li::before{content:‘◈’;color:rgba(139,92,246,.8);font-size:.58rem;flex-shrink:0}
+@media(max-width:800px){.ai{grid-template-columns:1fr;gap:40px}.aexp{right:6px}}
+
+/* SKILLS */
+#skills{padding:120px 5%;position:relative;z-index:2}
+.ski{max-width:1200px;margin:0 auto}
+.skgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:52px}
+.skcard{background:rgba(255,255,255,.05);backdrop-filter:blur(32px) saturate(180%);border:1px solid var(–glass-border);border-radius:24px;padding:36px;position:relative;overflow:hidden;transition:transform .5s var(–ease),box-shadow .5s,border-color .4s,background .4s;will-change:transform}
+.skcard::before{content:’’;position:absolute;inset:0;background:var(–shine);opacity:.4;pointer-events:none}
+.skcard:hover{transform:translateY(-5px);box-shadow:0 32px 80px rgba(0,0,0,.4),0 0 0 1px rgba(255,255,255,.1);background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.22)}
+.skglow{position:absolute;width:220px;height:220px;border-radius:50%;top:-70px;right:-70px;filter:blur(70px);opacity:.45;transition:opacity .4s;pointer-events:none}
+.skcard:hover .skglow{opacity:.8}
+.gv{background:radial-gradient(circle,rgba(139,92,246,.55),transparent 70%)}
+.gc{background:radial-gradient(circle,rgba(6,182,212,.5),transparent 70%)}
+.gr{background:radial-gradient(circle,rgba(244,63,94,.45),transparent 70%)}
+.ga{background:radial-gradient(circle,rgba(245,158,11,.45),transparent 70%)}
+.skico{width:52px;height:52px;border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;margin-bottom:20px;position:relative;z-index:2}
+.iv{background:rgba(139,92,246,.18);border:1px solid rgba(139,92,246,.28);color:rgba(167,139,250,.9)}
+.ic{background:rgba(6,182,212,.14);border:1px solid rgba(6,182,212,.24);color:rgba(103,232,249,.9)}
+.ir{background:rgba(244,63,94,.14);border:1px solid rgba(244,63,94,.24);color:rgba(251,113,133,.9)}
+.ia{background:rgba(245,158,11,.14);border:1px solid rgba(245,158,11,.24);color:rgba(252,211,77,.9)}
+.skname{font-family:var(–font-d);font-size:1.4rem;font-weight:700;margin-bottom:8px;position:relative;z-index:2;letter-spacing:-.01em}
+.skdesc{font-size:.83rem;color:var(–text-mid);line-height:1.75;margin-bottom:22px;font-weight:300;position:relative;z-index:2}
+.sktool{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:24px;position:relative;z-index:2}
+.st{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:60px;padding:4px 13px;font-size:.7rem;font-weight:600;color:var(–text-dim);transition:all .3s}
+.skcard:hover .st{border-color:rgba(255,255,255,.15);color:var(–text-mid)}
+.skrow{display:flex;justify-content:space-between;font-size:.7rem;font-weight:600;color:var(–text-dim);margin-bottom:9px;position:relative;z-index:2;letter-spacing:.04em}
+.sktk{height:4px;background:rgba(255,255,255,.06);border-radius:4px;overflow:hidden;position:relative;z-index:2}
+.skfill{height:4px;width:0;border-radius:4px;transition:width 1.8s var(–ease)}
+.sf-violet{background:linear-gradient(90deg,#8B5CF6,#A78BFA);box-shadow:0 0 12px rgba(139,92,246,.55)}
+.sf-cyan{background:linear-gradient(90deg,#06B6D4,#67E8F9);box-shadow:0 0 12px rgba(6,182,212,.55)}
+.sf-rose{background:linear-gradient(90deg,#F43F5E,#FB7185);box-shadow:0 0 12px rgba(244,63,94,.5)}
+.sf-amber{background:linear-gradient(90deg,#F59E0B,#FCD34D);box-shadow:0 0 12px rgba(245,158,11,.5)}
+@media(max-width:700px){.skgrid{grid-template-columns:1fr}}
+
+/* SERVICES */
+#services{padding:120px 5%;position:relative;z-index:2}
+.svci{max-width:1200px;margin:0 auto}
+.svch{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:52px;flex-wrap:wrap;gap:20px}
+.svcgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.svccard{background:rgba(255,255,255,.05);backdrop-filter:blur(28px) saturate(180%);border:1px solid var(–glass-border);border-radius:24px;padding:38px 32px 34px;position:relative;overflow:hidden;transition:transform .5s var(–ease),box-shadow .5s,border-color .4s,background .4s;cursor:default}
+.svccard::before{content:’’;position:absolute;inset:0;background:var(–shine);opacity:.32;pointer-events:none}
+.svccard:hover{transform:translateY(-8px);box-shadow:0 40px 80px rgba(0,0,0,.5),0 0 0 1px rgba(255,255,255,.1);background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.22)}
+.svcnum{font-size:.67rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(–text-dim);margin-bottom:28px;position:relative;z-index:2}
+.svcico{width:60px;height:60px;border-radius:18px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin-bottom:20px;position:relative;z-index:2;transition:transform .4s var(–spring)}
+.svccard:hover .svcico{transform:scale(1.1) rotate(-5deg)}
+.s1{background:rgba(6,182,212,.13);border:1px solid rgba(6,182,212,.24);color:rgba(103,232,249,.9)}
+.s2{background:rgba(244,63,94,.13);border:1px solid rgba(244,63,94,.24);color:rgba(251,113,133,.9)}
+.s3{background:rgba(139,92,246,.13);border:1px solid rgba(139,92,246,.24);color:rgba(167,139,250,.9)}
+.s4{background:rgba(245,158,11,.13);border:1px solid rgba(245,158,11,.24);color:rgba(252,211,77,.9)}
+.s5{background:rgba(132,204,22,.13);border:1px solid rgba(132,204,22,.24);color:rgba(190,242,100,.9)}
+.svctitle{font-family:var(–font-d);font-size:1.3rem;font-weight:700;margin-bottom:10px;letter-spacing:-.01em;position:relative;z-index:2}
+.svcdesc{font-size:.83rem;color:var(–text-mid);line-height:1.75;margin-bottom:24px;font-weight:300;position:relative;z-index:2}
+.svclist{list-style:none;display:flex;flex-direction:column;gap:9px;position:relative;z-index:2}
+.svclist li{font-size:.79rem;color:var(–text-dim);display:flex;align-items:center;gap:9px}
+.svclist li::before{content:‘◈’;color:rgba(103,232,249,.7);font-size:.55rem;flex-shrink:0}
+@media(max-width:900px){.svcgrid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.svcgrid{grid-template-columns:1fr}}
+
+/* PORTFOLIO */
+#portfolio{padding:120px 5%;position:relative;z-index:2}
+.porti{max-width:1200px;margin:0 auto}
+.porttop{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:46px;flex-wrap:wrap;gap:20px}
+.pfilters{display:flex;gap:8px;flex-wrap:wrap}
+.pf{background:rgba(255,255,255,.05);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.1);border-radius:60px;padding:8px 20px;font-size:.73rem;font-weight:600;color:var(–text-dim);cursor:pointer;transition:all .3s;font-family:var(–font-b)}
+.pf.on,.pf:hover{background:rgba(139,92,246,.2);border-color:rgba(139,92,246,.4);color:rgba(167,139,250,.9)}
+.portgrid{display:grid;grid-template-columns:repeat(12,1fr);grid-auto-rows:210px;gap:16px}
+.pi{position:relative;border-radius:var(–r);overflow:hidden;background:rgba(255,255,255,.04);backdrop-filter:blur(20px);border:1px solid var(–glass-border);cursor:pointer;transition:transform .45s var(–ease),box-shadow .45s,border-color .4s;will-change:transform}
+.pi:hover{transform:scale(1.025);box-shadow:0 24px 60px rgba(0,0,0,.5),0 0 0 1px rgba(255,255,255,.12);z-index:5;border-color:rgba(255,255,255,.22)}
+.pi1{grid-column:span 7;grid-row:span 2}
+.pi2{grid-column:span 5}
+.pi3{grid-column:span 5}
+.pi4{grid-column:span 4;grid-row:span 2}
+.pi5{grid-column:span 4;grid-row:span 2}
+.pi6{grid-column:span 4}
+.pig{position:absolute;inset:0;opacity:.5;transition:opacity .4s}
+.pi:hover .pig{opacity:.85}
+.pg1{background:radial-gradient(circle at 30% 30%,rgba(6,182,212,.22),rgba(139,92,246,.1) 50%,transparent 70%)}
+.pg2{background:radial-gradient(circle at 70% 40%,rgba(244,63,94,.22),transparent 70%)}
+.pg3{background:radial-gradient(circle at 50% 50%,rgba(139,92,246,.22),transparent 70%)}
+.pg4{background:radial-gradient(circle at 20% 80%,rgba(245,158,11,.18),transparent 70%)}
+.pg5{background:radial-gradient(circle at 80% 20%,rgba(132,204,22,.14),transparent 70%)}
+.pg6{background:radial-gradient(circle at 50% 50%,rgba(6,182,212,.18),transparent 70%)}
+.pglyph{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:3.5rem;opacity:.07;transition:opacity .3s}
+.pi:hover .pglyph{opacity:.03}
+.povl{position:absolute;inset:0;background:linear-gradient(to top,rgba(3,2,10,.92) 0%,rgba(3,2,10,.38) 50%,transparent 100%);display:flex;flex-direction:column;justify-content:flex-end;padding:24px;opacity:0;transform:translateY(6px);transition:opacity .4s var(–ease),transform .4s var(–ease)}
+.pi:hover .povl{opacity:1;transform:none}
+.pcat{font-size:.63rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:rgba(103,232,249,.9);margin-bottom:6px}
+.pname{font-family:var(–font-d);font-size:1.05rem;font-weight:700;color:#fff;margin-bottom:12px;line-height:1.3}
+.pcta{display:inline-flex;align-items:center;gap:8px;background:rgba(139,92,246,.24);backdrop-filter:blur(10px);border:1px solid rgba(139,92,246,.4);border-radius:60px;padding:7px 16px;font-size:.7rem;font-weight:700;color:rgba(167,139,250,.9);align-self:flex-start;text-decoration:none;transition:background .3s,box-shadow .3s}
+.pcta:hover{background:rgba(139,92,246,.42);box-shadow:0 0 20px rgba(139,92,246,.4)}
+@media(max-width:900px){.portgrid{grid-template-columns:1fr 1fr;grid-auto-rows:180px}.pi1,.pi2,.pi3,.pi4,.pi5,.pi6{grid-column:span 1;grid-row:span 1}.povl{opacity:1;transform:none}}
+@media(max-width:480px){.portgrid{grid-template-columns:1fr}}
+
+/* SHOWREEL */
+#showreel{padding:120px 5%;position:relative;z-index:2;text-align:center}
+.sri{max-width:960px;margin:0 auto}
+.srvid{margin-top:52px;aspect-ratio:16/9;background:rgba(255,255,255,.04);backdrop-filter:blur(24px);border:1px solid var(–glass-border);border-radius:var(–r3);overflow:hidden;position:relative;box-shadow:0 60px 120px rgba(0,0,0,.6),0 0 0 1px var(–glass-border),inset 0 1px 0 rgba(255,255,255,.1)}
+.srvid::before{content:’’;position:absolute;inset:0;background:var(–shine);opacity:.3;pointer-events:none;z-index:1}
+.srinn{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;z-index:2}
+.srbg{position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(139,92,246,.07),transparent 60%);pointer-events:none}
+.srscn{position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(255,255,255,.01) 2px,rgba(255,255,255,.01) 4px);pointer-events:none}
+.playbtn{width:88px;height:88px;border-radius:50%;background:rgba(255,255,255,.08);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.18);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:transform .4s var(–spring),background .3s,box-shadow .4s;text-decoration:none;position:relative;z-index:2;box-shadow:0 0 0 1px rgba(255,255,255,.07),0 20px 60px rgba(0,0,0,.4)}
+.playbtn::before{content:’’;position:absolute;inset:0;border-radius:50%;background:var(–shine);pointer-events:none}
+.playbtn:hover{transform:scale(1.1);background:rgba(139,92,246,.24);box-shadow:0 0 52px rgba(139,92,246,.5),0 20px 60px rgba(0,0,0,.4)}
+.playbtn i{color:#fff;font-size:1.2rem;margin-left:4px;position:relative;z-index:2}
+.srtitle{font-family:var(–font-d);font-size:1.1rem;font-weight:400;font-style:italic;color:var(–text-dim);position:relative;z-index:2}
+.srhint{font-size:.67rem;color:rgba(255,255,255,.18);letter-spacing:.08em;position:relative;z-index:2}
+
+/* TESTIMONIALS */
+#testimonials{padding:120px 5%;position:relative;z-index:2;overflow:hidden}
+.testih{max-width:600px;margin:0 auto 56px;text-align:center}
+.trun{display:flex;gap:20px;animation:tgo 36s linear infinite;width:max-content;padding:4px 0}
+.trun:hover{animation-play-state:paused}
+@keyframes tgo{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.tcard{width:360px;flex-shrink:0;background:rgba(255,255,255,.05);backdrop-filter:blur(28px) saturate(180%);border:1px solid var(–glass-border);border-radius:22px;padding:32px;position:relative;overflow:hidden;transition:border-color .35s,background .35s,box-shadow .35s;will-change:transform}
+.tcard::before{content:’’;position:absolute;inset:0;background:var(–shine);opacity:.32;pointer-events:none}
+.tcard:hover{border-color:rgba(255,255,255,.22);background:rgba(255,255,255,.08);box-shadow:0 20px 60px rgba(0,0,0,.3)}
+.tst{display:flex;gap:4px;margin-bottom:14px;position:relative;z-index:2}
+.tst i{font-size:.73rem;color:#F59E0B;filter:drop-shadow(0 0 4px rgba(245,158,11,.5))}
+.tq{font-family:var(–font-d);font-size:2.5rem;font-weight:700;color:rgba(139,92,246,.5);line-height:1;margin-bottom:6px;position:relative;z-index:2}
+.ttxt{font-size:.87rem;color:var(–text-mid);line-height:1.85;font-style:italic;margin-bottom:24px;font-weight:300;position:relative;z-index:2}
+.tdiv{width:28px;height:1px;background:var(–glass-border);margin-bottom:20px;position:relative;z-index:2}
+.tauthor{display:flex;align-items:center;gap:14px;position:relative;z-index:2}
+.tav{width:44px;height:44px;border-radius:14px;background:rgba(255,255,255,.06);border:1px solid var(–glass-border);display:flex;align-items:center;justify-content:center;font-family:var(–font-d);font-size:1rem;font-weight:700;color:rgba(255,255,255,.85);flex-shrink:0}
+.tnm{font-size:.84rem;font-weight:700;color:rgba(255,255,255,.9)}
+.trl{font-size:.71rem;color:var(–text-dim);margin-top:2px}
+
+/* CONTACT */
+#contact{padding:120px 5%;position:relative;z-index:2}
+.conti{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+.cdesc{font-size:.93rem;color:var(–text-mid);line-height:1.85;font-weight:300;margin:20px 0 34px}
+.cch{display:flex;flex-direction:column;gap:12px;margin-bottom:30px}
+.cchan{display:flex;align-items:center;gap:16px;background:rgba(255,255,255,.04);backdrop-filter:blur(20px);border:1px solid var(–glass-border);border-radius:var(–r);padding:15px 20px;text-decoration:none;color:#fff;transition:all .4s var(–ease);position:relative;overflow:hidden}
+.cchan::before{content:’’;position:absolute;inset:0;background:var(–shine);opacity:.28;pointer-events:none}
+.cchan:hover{background:rgba(255,255,255,.09);border-color:rgba(255,255,255,.24);transform:translateX(6px);box-shadow:0 12px 40px rgba(0,0,0,.3)}
+.cico{width:42px;height:42px;border-radius:13px;display:flex;align-items:center;justify-content:center;font-size:.95rem;flex-shrink:0;position:relative;z-index:2}
+.cg{background:rgba(244,63,94,.13);border:1px solid rgba(244,63,94,.2);color:rgba(251,113,133,.9)}
+.cw{background:rgba(74,222,128,.11);border:1px solid rgba(74,222,128,.2);color:rgba(134,239,172,.9)}
+.ci{background:rgba(244,63,94,.11);border:1px solid rgba(244,63,94,.2);color:rgba(244,114,182,.9)}
+.cl{background:rgba(6,182,212,.11);border:1px solid rgba(6,182,212,.2);color:rgba(103,232,249,.9)}
+.chl{font-size:.62rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(–text-dim);margin-bottom:2px;position:relative;z-index:2}
+.chv{font-size:.87rem;font-weight:600;color:rgba(255,255,255,.9);position:relative;z-index:2}
+.avail{display:inline-flex;align-items:center;gap:8px;background:rgba(74,222,128,.07);border:1px solid rgba(74,222,128,.2);border-radius:60px;padding:8px 18px;font-size:.71rem;font-weight:600;color:rgba(134,239,172,.85);letter-spacing:.06em}
+.adot{width:6px;height:6px;border-radius:50%;background:#4ADE80;box-shadow:0 0 8px #4ADE80;animation:lpulse 2.5s infinite}
+
+.cfw{background:rgba(255,255,255,.05);backdrop-filter:blur(32px) saturate(180%);border:1px solid var(–glass-border);border-radius:var(–r3);padding:48px;position:relative;overflow:hidden}
+.cfw::before{content:’’;position:absolute;inset:0;background:var(–shine);opacity:.38;pointer-events:none}
+.cfw::after{content:’’;position:absolute;top:0;left:10%;right:10%;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.32),transparent);pointer-events:none}
+.cfh{font-family:var(–font-d);font-size:1.8rem;font-weight:700;margin-bottom:32px;position:relative;z-index:2;letter-spacing:-.01em}
+form{position:relative;z-index:2}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.fg{display:flex;flex-direction:column;gap:7px;margin-bottom:14px}
+.fg label{font-size:.63rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(–text-dim)}
+.fg input,.fg textarea,.fg select{background:rgba(255,255,255,.05);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:14px 18px;color:#fff;font-family:var(–font-b);font-size:.87rem;outline:none;transition:border-color .3s,background .3s,box-shadow .3s;resize:none;-webkit-appearance:none}
+.fg input::placeholder,.fg textarea::placeholder{color:rgba(255,255,255,.2)}
+.fg input:focus,.fg textarea:focus,.fg select:focus{border-color:rgba(139,92,246,.5);background:rgba(139,92,246,.07);box-shadow:0 0 0 3px rgba(139,92,246,.1)}
+.fg select option{background:#0D0829}
+.fg textarea{min-height:120px}
+.fsubmit{width:100%;margin-top:6px;background:rgba(139,92,246,.25);backdrop-filter:blur(20px);border:1px solid rgba(139,92,246,.4);border-radius:60px;padding:16px;font-family:var(–font-b);font-size:.87rem;font-weight:700;letter-spacing:.06em;color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px;transition:all .4s var(–ease);position:relative;overflow:hidden}
+.fsubmit::before{content:’’;position:absolute;inset:0;border-radius:60px;background:var(–shine);opacity:.4;pointer-events:none}
+.fsubmit::after{content:’’;position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.13),transparent);transition:left .6s;pointer-events:none}
+.fsubmit:hover{background:rgba(139,92,246,.45);box-shadow:0 0 40px rgba(139,92,246,.5),0 12px 40px rgba(0,0,0,.3);transform:translateY(-2px)}
+.fsubmit:hover::after{left:100%}
+.fsubmit span,.fsubmit i{position:relative;z-index:2}
+.fsuccess{display:none;text-align:center;padding:24px;color:rgba(134,239,172,.9);font-weight:600;font-size:.9rem}
+@media(max-width:800px){.conti{grid-template-columns:1fr;gap:40px}.cfw{padding:28px}.frow{grid-template-columns:1fr}}
+@media(max-width:400px){.cfw{padding:20px 16px}}
+
+/* FOOTER */
+footer{position:relative;z-index:2;border-top:1px solid var(–glass-border);padding:60px 5% 40px;background:rgba(255,255,255,.02);backdrop-filter:blur(20px)}
+.footi{max-width:1200px;margin:0 auto}
+.foottop{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:32px;margin-bottom:48px}
+.fl{font-family:var(–font-d);font-size:2rem;font-weight:700;color:#fff;letter-spacing:-.02em}
+.flsub{font-size:.68rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(–text-dim);margin-top:6px}
+.fnav{display:flex;gap:24px;flex-wrap:wrap}
+.fnav a{font-size:.8rem;color:var(–text-dim);text-decoration:none;transition:color .3s}
+.fnav a:hover{color:#fff}
+.ficons{display:flex;gap:10px;flex-wrap:wrap}
+@media(max-width:700px){.foottop{flex-direction:column;align-items:flex-start}.fnav{gap:16px}.footbot{flex-direction:column;gap:8px;text-align:center}}
+.ficon{width:40px;height:40px;border-radius:13px;background:rgba(255,255,255,.05);backdrop-filter:blur(10px);border:1px solid var(–glass-border);display:flex;align-items:center;justify-content:center;color:var(–text-mid);text-decoration:none;font-size:.9rem;transition:all .4s var(–spring)}
+.ficon:hover{background:rgba(139,92,246,.24);border-color:rgba(139,92,246,.4);color:rgba(167,139,250,.9);transform:translateY(-3px) scale(1.05);box-shadow:0 8px 24px rgba(139,92,246,.24)}
+.footbot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;padding-top:24px;border-top:1px solid var(–glass-border)}
+.fcopy{font-size:.74rem;color:var(–text-dim)}
+.fcopy span{color:rgba(139,92,246,.8)}
+.fmade{font-size:.67rem;color:rgba(255,255,255,.15)}
+</style>
+
+</head>
+<body>
+
+<!-- AURORA BACKGROUND -->
+
+<div id="bg">
+  <div class="blob b1"></div><div class="blob b2"></div>
+  <div class="blob b3"></div><div class="blob b4"></div>
+</div>
+<div id="noise"></div>
+
+<!-- CURSOR -->
+
+<div id="cd"></div><div id="cg"></div>
+
+<!-- SCROLL TOP -->
+
+<button id="st" onclick="scrollTo({top:0,behavior:'smooth'})"><i class="fas fa-arrow-up"></i></button>
+
+<!-- LOADER -->
+
+<div id="loader">
+  <div class="lb1"></div><div class="lb2"></div>
+  <div class="lglass">
+    <div class="lrings">
+      <div class="lr lr1"></div><div class="lr lr2"></div><div class="lr lr3"></div>
+      <div class="lrc"></div>
+    </div>
+    <div class="lname">Syed Rehan</div>
+    <div class="ltag">Digital Creator · India</div>
+    <div class="lpwrap">
+      <div class="lpbg"><div class="lpfill"></div></div>
+      <div class="lpct" id="lpct">0%</div>
+    </div>
+  </div>
+</div>
+
+<!-- NAV -->
+
+<nav id="nav">
+  <div class="ni">
+    <!-- ============================================================
+         NAVBAR LOGO — Replace text with your logo image:
+         <img src="YOUR_LOGO.png" alt="Syed Rehan" style="height:32px;width:auto">
+         ============================================================ -->
+    <a href="#hero" class="logo"><div class="lgem"></div>Syed Rehan</a>
+    <ul class="nl">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#portfolio">Work</a></li>
+      <li><a href="#testimonials">Reviews</a></li>
+      <li><a href="#contact" class="nhire"><i class="fas fa-rocket"></i> Hire Me</a></li>
+    </ul>
+    <div class="hbg" id="hbg" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+
+<!-- Mobile nav backdrop (tap outside to close) -->
+
+<div class="mnav-backdrop" id="mnavBackdrop" onclick="closeMenu()"></div>
+
+<!-- Mobile nav panel -->
+
+<div class="mnav" id="mnav">
+  <!-- Close button -->
+  <button class="mnav-close" onclick="closeMenu()" aria-label="Close menu">
+    <i class="fas fa-times"></i>
+  </button>
+  <a href="#about"        onclick="closeMenu()">About</a>
+  <a href="#skills"       onclick="closeMenu()">Skills</a>
+  <a href="#services"     onclick="closeMenu()">Services</a>
+  <a href="#portfolio"    onclick="closeMenu()">Work</a>
+  <a href="#testimonials" onclick="closeMenu()">Reviews</a>
+  <a href="#contact"      onclick="closeMenu()">Contact</a>
+  <!-- Social strip -->
+  <div class="mnav-foot">
+    <a href="https://instagram.com/syedrehan"   target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+    <a href="https://facebook.com/syedrehan"    target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://twitter.com/syedrehan"     target="_blank" title="Twitter / X"><i class="fab fa-x-twitter"></i></a>
+    <a href="https://linkedin.com/in/syedrehan" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+    <a href="https://youtube.com/@syedrehan"    target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+    <a href="https://wa.me/919999999999"         target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+  </div>
+</div>
+
+<!-- HERO -->
+
+<section id="hero">
+  <div class="hgrid"></div>
+  <div class="hwrap">
+    <div>
+      <div class="hbadge"><div class="bdot"></div>Available for Projects · India</div>
+      <h1 class="hh">
+        <span class="hhl"><span>Syed</span></span>
+        <span class="hhl"><span class="hg">Rehan.</span></span>
+        <span class="hhl"><span class="ho">Studio</span></span>
+      </h1>
+      <div class="hroles">
+        <div class="hrole"><i class="fas fa-code" style="color:rgba(103,232,249,.8)"></i>Web Developer</div>
+        <div class="hrole"><i class="fas fa-film" style="color:rgba(251,113,133,.8)"></i>Video Editor</div>
+        <div class="hrole"><i class="fas fa-pen-nib" style="color:rgba(167,139,250,.8)"></i>Graphic Designer</div>
+        <div class="hrole"><i class="fas fa-chart-line" style="color:rgba(134,239,172,.8)"></i>SMM Agency Owner</div>
+      </div>
+      <p class="hbio">Multi-disciplinary digital creator and agency owner — crafting premium websites, cinematic videos, iconic designs, and high-performance social campaigns. All under one glass roof.</p>
+      <div class="hbtns">
+        <a href="#contact" class="bprimary"><i class="fas fa-rocket"></i>Hire Me Now</a>
+        <a href="#portfolio" class="boutline"><i class="fas fa-eye"></i>View Work</a>
+      </div>
+      <div class="hstats">
+        <div class="stat"><div class="stn">50+</div><div class="stl">Projects</div></div>
+        <div class="stat"><div class="stn">30+</div><div class="stl">Clients</div></div>
+        <div class="stat"><div class="stn">4+</div><div class="stl">Years XP</div></div>
+        <div class="stat"><div class="stn">5×</div><div class="stl">Avg ROAS</div></div>
+      </div>
+    </div>
+    <div class="hport">
+      <div class="pblob"></div>
+      <div class="pglass">
+        <!-- ============================================================
+             HERO PROFILE IMAGE — Replace the "SR" monogram with your photo:
+             1. Remove the <div class="pmono">SR</div> line below
+             2. Add: <img src="YOUR_PHOTO.jpg" alt="Syed Rehan"
+                         style="width:100%;height:100%;object-fit:cover;
+                                position:absolute;inset:0;border-radius:24px">
+             ============================================================ -->
+        <div class="pmono">SR</div>
+        <div class="pname">Syed Rehan</div>
+        <div class="psub">Digital Creator &amp; Agency Owner</div>
+        <div class="ploc"><i class="fas fa-location-dot"></i>India</div>
+      </div>
+      <div class="ob ob1"><div class="obi ov"><i class="fas fa-code"></i></div><div><div class="oblbl">Latest</div><div class="obval">React App</div></div></div>
+      <div class="ob ob2"><div class="obi oc"><i class="fas fa-arrow-trend-up"></i></div><div><div class="oblbl">ROAS</div><div class="obval">5.2×</div></div></div>
+      <div class="ob ob3"><div class="obi or"><i class="fas fa-film"></i></div><div><div class="oblbl">Views</div><div class="obval">2.4M+</div></div></div>
+    </div>
+  </div>
+  <div class="scrl"><div class="smouse"><div class="swheel"></div></div><div class="slbl2">Scroll</div></div>
+</section>
+
+<!-- ABOUT -->
+
+<section id="about">
+  <div class="ai">
+    <div style="position:relative" class="rv fl">
+      <div class="avf">
+        <!-- ============================================================
+             ABOUT SECTION — PROFILE IMAGE
+             Option A: Replace entire avfi block with your image:
+             <img src="YOUR_ABOUT_PHOTO.jpg" alt="Syed Rehan"
+                  style="width:100%;height:100%;object-fit:cover">
+
+```
+         Option B: Replace only the avatar circle "SR":
+         Inside <div class="am"> replace "SR" with:
+         <img src="YOUR_AVATAR.jpg" alt="SR"
+              style="width:100%;height:100%;object-fit:cover;border-radius:50%">
+         ============================================================ -->
+    <div class="avfi">
+      <div class="amr"><div class="am">SR</div></div>
+      <div style="font-family:var(--font-d);font-size:1.3rem;font-weight:700">Syed Rehan</div>
+      <div style="font-size:.7rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--text-dim)">Multi-Skilled Digital Creator</div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:14px">
+        <span style="background:rgba(6,182,212,.1);border:1px solid rgba(6,182,212,.24);border-radius:60px;padding:5px 14px;font-size:.7rem;font-weight:700;color:rgba(103,232,249,.85);letter-spacing:.06em">🇮🇳 India</span>
+        <span style="background:rgba(74,222,128,.1);border:1px solid rgba(74,222,128,.24);border-radius:60px;padding:5px 14px;font-size:.7rem;font-weight:700;color:rgba(134,239,172,.85);letter-spacing:.06em">● Open to Work</span>
+      </div>
+    </div>
+  </div>
+  <div class="aexp"><div class="n">4+</div><div class="l">Years of<br>Excellence</div></div>
+</div>
+<div class="rv fr d2">
+  <div class="slbl">About Me</div>
+  <h2 class="sh">The Mind <em>Behind</em><br><span class="sg">The Creation.</span></h2>
+  <p class="atxt">I'm Syed Rehan — a multi-disciplinary digital creator and agency owner based in India. I fuse technical precision with creative vision to build digital experiences that actually move the needle.</p>
+  <p class="atxt" style="margin-top:-10px">From blazing-fast web apps and cinematic brand films to iconic brand identities and laser-targeted ad campaigns — everything crafted with obsessive attention to quality.</p>
+  <div class="chips">
+    <span class="chip">Web Development</span><span class="chip">Video Editing</span><span class="chip">Graphic Design</span>
+    <span class="chip">Social Media Marketing</span><span class="chip">Brand Strategy</span><span class="chip">UI/UX Design</span><span class="chip">Content Creation</span>
+  </div>
+  <ul class="alist">
+    <li>Full-stack websites — React, Next.js, WordPress, Shopify</li>
+    <li>Cinematic video edits — Premiere Pro &amp; After Effects</li>
+    <li>Brand identities that command attention &amp; trust</li>
+    <li>Meta &amp; Google Ads with proven 5× ROAS results</li>
+    <li>Agency owner managing creative &amp; campaigns for multiple clients</li>
+  </ul>
+  <div style="display:flex;gap:14px;flex-wrap:wrap;margin-top:10px">
+    <a href="#contact" class="bprimary"><i class="fas fa-envelope"></i>Let's Work Together</a>
+    <a href="#portfolio" class="boutline">View Portfolio</a>
+  </div>
+</div>
+```
+
+  </div>
+</section>
+
+<!-- SKILLS -->
+
+<section id="skills">
+  <div class="ski">
+    <div class="rv" style="max-width:680px">
+      <div class="slbl">Expertise</div>
+      <h2 class="sh">Skills That <em>Convert</em><br><span class="svc">Browsers to Buyers.</span></h2>
+    </div>
+    <div class="skgrid">
+      <div class="skcard rv d1">
+        <div class="skglow gv"></div>
+        <div class="skico iv"><i class="fas fa-code"></i></div>
+        <div class="skname">Web Development</div>
+        <div class="skdesc">Fast, SEO-optimised, conversion-focused websites and web apps built with modern stacks — every pixel intentional.</div>
+        <div class="sktool"><span class="st">HTML/CSS</span><span class="st">JavaScript</span><span class="st">React</span><span class="st">Next.js</span><span class="st">WordPress</span><span class="st">Shopify</span></div>
+        <div class="skrow"><span>Mastery</span><span>92%</span></div>
+        <div class="sktk"><div class="skfill sf-violet" data-w="92"></div></div>
+      </div>
+      <div class="skcard rv d2">
+        <div class="skglow gc"></div>
+        <div class="skico ic"><i class="fas fa-film"></i></div>
+        <div class="skname">Video Editing</div>
+        <div class="skdesc">Cinematic storytelling through expert colour grading, motion graphics and seamless pacing that hooks viewers from frame one.</div>
+        <div class="sktool"><span class="st">Premiere Pro</span><span class="st">After Effects</span><span class="st">DaVinci Resolve</span><span class="st">CapCut Pro</span></div>
+        <div class="skrow"><span>Mastery</span><span>88%</span></div>
+        <div class="sktk"><div class="skfill sf-cyan" data-w="88"></div></div>
+      </div>
+      <div class="skcard rv d3">
+        <div class="skglow gr"></div>
+        <div class="skico ir"><i class="fas fa-pen-nib"></i></div>
+        <div class="skname">Graphic Design</div>
+        <div class="skdesc">Visual identities, marketing collateral and scroll-stopping creatives that communicate brand values instantly and powerfully.</div>
+        <div class="sktool"><span class="st">Photoshop</span><span class="st">Illustrator</span><span class="st">Figma</span><span class="st">Canva Pro</span><span class="st">InDesign</span></div>
+        <div class="skrow"><span>Mastery</span><span>90%</span></div>
+        <div class="sktk"><div class="skfill sf-rose" data-w="90"></div></div>
+      </div>
+      <div class="skcard rv d4">
+        <div class="skglow ga"></div>
+        <div class="skico ia"><i class="fas fa-bullhorn"></i></div>
+        <div class="skname">Social Media Marketing</div>
+        <div class="skdesc">Full-funnel campaigns on Meta, Google and Instagram that turn ad spend into measurable business results and loyal audiences.</div>
+        <div class="sktool"><span class="st">Meta Ads</span><span class="st">Google Ads</span><span class="st">Instagram</span><span class="st">Analytics</span><span class="st">A/B Testing</span></div>
+        <div class="skrow"><span>Mastery</span><span>87%</span></div>
+        <div class="sktk"><div class="skfill sf-amber" data-w="87"></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+
+<section id="services">
+  <div class="svci">
+    <div class="svch rv">
+      <div><div class="slbl">What I Offer</div><h2 class="sh">Premium <span class="sra">Services</span></h2></div>
+      <p style="color:var(--text-mid);font-size:.88rem;max-width:360px;line-height:1.8;font-weight:300">End-to-end digital solutions for brands that refuse to be ordinary.</p>
+    </div>
+    <div class="svcgrid">
+      <div class="svccard rv d1"><div class="svcnum">01 / 05</div><div class="svcico s1"><i class="fas fa-globe"></i></div><div class="svctitle">Website Development</div><div class="svcdesc">High-performance sites engineered for speed, SEO and conversions — from landing pages to complex web apps.</div><ul class="svclist"><li>Landing pages &amp; e-commerce</li><li>Custom React &amp; Next.js apps</li><li>WordPress &amp; Shopify builds</li><li>Speed optimisation &amp; SEO</li></ul></div>
+      <div class="svccard rv d2"><div class="svcnum">02 / 05</div><div class="svcico s2"><i class="fas fa-video"></i></div><div class="svctitle">Video Editing</div><div class="svcdesc">Cinematic reels, brand films and ad creatives that command attention and tell compelling stories.</div><ul class="svclist"><li>Reels &amp; short-form content</li><li>YouTube &amp; brand films</li><li>Motion graphics &amp; VFX</li><li>Colour grading &amp; audio mix</li></ul></div>
+      <div class="svccard rv d3"><div class="svcnum">03 / 05</div><div class="svcico s3"><i class="fas fa-paint-brush"></i></div><div class="svctitle">Graphic Design</div><div class="svcdesc">Visual systems and brand identities that make your business instantly recognisable and unforgettable.</div><ul class="svclist"><li>Logo &amp; brand identity</li><li>Social media creatives</li><li>Posters, banners &amp; print</li><li>UI/UX design &amp; prototypes</li></ul></div>
+      <div class="svccard rv d4"><div class="svcnum">04 / 05</div><div class="svcico s4"><i class="fas fa-chart-line"></i></div><div class="svctitle">Social Media Marketing</div><div class="svcdesc">Strategic campaigns that turn followers into customers and ad spend into measurable ROI.</div><ul class="svclist"><li>Meta &amp; Instagram ads</li><li>Content strategy &amp; calendars</li><li>Analytics &amp; reporting</li><li>Community management</li></ul></div>
+      <div class="svccard rv d5"><div class="svcnum">05 / 05</div><div class="svcico s5"><i class="fas fa-gem"></i></div><div class="svctitle">Branding &amp; Content</div><div class="svcdesc">Holistic brand ecosystems — from strategy and identity to content production and distribution at scale.</div><ul class="svclist"><li>Brand strategy &amp; positioning</li><li>Complete brand identity kits</li><li>Content production systems</li><li>Brand guidelines &amp; assets</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+
+<section id="portfolio">
+  <div class="porti">
+    <div class="porttop rv">
+      <div><div class="slbl">Selected Work</div><h2 class="sh">The <span class="svc">Portfolio.</span></h2></div>
+      <div class="pfilters">
+        <button class="pf on" data-f="all">All</button>
+        <button class="pf" data-f="web">Web</button>
+        <button class="pf" data-f="video">Video</button>
+        <button class="pf" data-f="design">Design</button>
+        <button class="pf" data-f="social">Social</button>
+      </div>
+    </div>
+    <!-- ============================================================
+         PORTFOLIO IMAGES — Add project thumbnail images to each .pi card.
+         Inside each <div class="pi pi1"> add BEFORE <div class="pig">:
+         <img src="YOUR_PROJECT_IMAGE.jpg" alt="Project Name"
+              style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;opacity:.45">
+
+```
+     Project slots:
+       pi1 → Web Dev project (large card, spans 2 rows)
+       pi2 → Video project
+       pi3 → Design project
+       pi4 → Social Media project (large card)
+       pi5 → Web Dev project 2 (large card)
+       pi6 → Design project 2
+     ============================================================ -->
+<div class="portgrid rv">
+  <div class="pi pi1" data-c="web"><div class="pig pg1"></div><div class="pglyph">⌘</div><div class="povl"><div class="pcat">Web Development</div><div class="pname">E-Commerce Fashion Platform — Shopify + React</div><a href="#contact" class="pcta"><i class="fas fa-external-link-alt"></i>View Project</a></div></div>
+  <div class="pi pi2" data-c="video"><div class="pig pg2"></div><div class="pglyph">▶</div><div class="povl"><div class="pcat">Video Editing</div><div class="pname">Cinematic Brand Film</div><a href="#contact" class="pcta"><i class="fas fa-play"></i>Watch</a></div></div>
+  <div class="pi pi3" data-c="design"><div class="pig pg3"></div><div class="pglyph">✦</div><div class="povl"><div class="pcat">Graphic Design</div><div class="pname">Complete Brand Identity System</div><a href="#contact" class="pcta">View Design</a></div></div>
+  <div class="pi pi4" data-c="social"><div class="pig pg4"></div><div class="pglyph">◈</div><div class="povl"><div class="pcat">Social Media</div><div class="pname">Meta Ads Campaign — 5.2× ROAS</div><a href="#contact" class="pcta">Case Study</a></div></div>
+  <div class="pi pi5" data-c="web"><div class="pig pg5"></div><div class="pglyph">⊞</div><div class="povl"><div class="pcat">Web Development</div><div class="pname">SaaS Analytics Dashboard — Next.js</div><a href="#contact" class="pcta">View Project</a></div></div>
+  <div class="pi pi6" data-c="design"><div class="pig pg6"></div><div class="pglyph">◎</div><div class="povl"><div class="pcat">Graphic Design</div><div class="pname">Social Poster Series — 20+ Creatives</div><a href="#contact" class="pcta">View Gallery</a></div></div>
+</div>
+```
+
+  </div>
+</section>
+
+<!-- SHOWREEL -->
+
+<section id="showreel">
+  <div class="sri">
+    <div class="rv"><div class="slbl">Video Showcase</div><h2 class="sh" style="text-align:center">The <span class="sra">Showreel.</span></h2><p class="sub" style="max-width:560px;margin:0 auto">Brand films, reels, cinematic ads, and motion design — best work in one reel.</p></div>
+    <div class="srvid rv d2">
+      <div class="srinn">
+        <div class="srbg"></div><div class="srscn"></div>
+        <a href="https://youtube.com" target="_blank" rel="noopener" class="playbtn"><i class="fas fa-play"></i></a>
+        <div class="srtitle">Watch the Full Showreel</div>
+        <div class="srhint">Replace with your YouTube embed URL</div>
+      </div>
+      <!-- <iframe style="width:100%;height:100%;border:none;" src="https://www.youtube.com/embed/YOUR_ID?rel=0" allowfullscreen></iframe> -->
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+
+<section id="testimonials">
+  <div class="testih rv"><div class="slbl">Client Reviews</div><h2 class="sh">What Clients <span class="svc">Say.</span></h2><p class="sub" style="margin-top:14px">Real results. Real relationships. Real words from real clients.</p></div>
+  <div style="overflow:hidden;padding:6px 0">
+    <div class="trun">
+      <div class="tcard"><div class="tst"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><div class="tq">"</div><p class="ttxt">Rehan built our entire e-commerce platform from scratch. Conversions tripled within the first month. One of the best web developers I've ever worked with.</p><div class="tdiv"></div><div class="tauthor"><div class="tav">AK</div><div><div class="tnm">Arjun Kapoor</div><div class="trl">Founder, StyleMart India</div></div></div></div>
+      <div class="tcard"><div class="tst"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><div class="tq">"</div><p class="ttxt">Instagram grew from 2k to 50k followers in 4 months. Rehan's content strategy and video edits are genuinely world-class.</p><div class="tdiv"></div><div class="tauthor"><div class="tav" style="background:rgba(244,63,94,.12);border-color:rgba(244,63,94,.2);color:rgba(251,113,133,.9)">PM</div><div><div class="tnm">Priya Menon</div><div class="trl">CEO, Glow Skincare</div></div></div></div>
+      <div class="tcard"><div class="tst"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><div class="tq">"</div><p class="ttxt">The brand identity Rehan designed was exactly what we envisioned — and more. Clean, modern, premium. Our clients absolutely love it.</p><div class="tdiv"></div><div class="tauthor"><div class="tav" style="background:rgba(139,92,246,.15);border-color:rgba(139,92,246,.25);color:rgba(167,139,250,.9)">RS</div><div><div class="tnm">Rahul Sharma</div><div class="trl">Director, TechVision</div></div></div></div>
+      <div class="tcard"><div class="tst"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><div class="tq">"</div><p class="ttxt">Meta ad ROAS went from 1.8× to 5.2×. Rehan understands both creative and data — a rare combination. The campaign was exceptional.</p><div class="tdiv"></div><div class="tauthor"><div class="tav" style="background:rgba(6,182,212,.12);border-color:rgba(6,182,212,.2);color:rgba(103,232,249,.9)">FN</div><div><div class="tnm">Fatima Nair</div><div class="trl">Marketing Head, FitLife</div></div></div></div>
+      <div class="tcard"><div class="tst"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><div class="tq">"</div><p class="ttxt">Product launch video was stunning — delivered ahead of schedule. Quality was leagues above agencies charging five times more.</p><div class="tdiv"></div><div class="tauthor"><div class="tav" style="background:rgba(245,158,11,.1);border-color:rgba(245,158,11,.2);color:rgba(252,211,77,.9)">VK</div><div><div class="tnm">Vivek Kumar</div><div class="trl">PM, NovaTech</div></div></div></div>
+      <!-- duplicate for loop -->
+      <div class="tcard"><div class="tst"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><div class="tq">"</div><p class="ttxt">Rehan built our entire e-commerce platform from scratch. Conversions tripled within the first month. One of the best web developers I've ever worked with.</p><div class="tdiv"></div><div class="tauthor"><div class="tav">AK</div><div><div class="tnm">Arjun Kapoor</div><div class="trl">Founder, StyleMart India</div></div></div></div>
+      <div class="tcard"><div class="tst"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><div class="tq">"</div><p class="ttxt">Instagram grew from 2k to 50k followers in 4 months. Rehan's content strategy and video edits are genuinely world-class.</p><div class="tdiv"></div><div class="tauthor"><div class="tav" style="background:rgba(244,63,94,.12);border-color:rgba(244,63,94,.2);color:rgba(251,113,133,.9)">PM</div><div><div class="tnm">Priya Menon</div><div class="trl">CEO, Glow Skincare</div></div></div></div>
+      <div class="tcard"><div class="tst"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><div class="tq">"</div><p class="ttxt">Meta ad ROAS went from 1.8× to 5.2×. Rehan understands both creative and data — a rare combination. The campaign was exceptional.</p><div class="tdiv"></div><div class="tauthor"><div class="tav" style="background:rgba(6,182,212,.12);border-color:rgba(6,182,212,.2);color:rgba(103,232,249,.9)">FN</div><div><div class="tnm">Fatima Nair</div><div class="trl">Marketing Head, FitLife</div></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact">
+  <div class="conti">
+    <div class="rv fl">
+      <div class="slbl">Get In Touch</div>
+      <h2 class="sh">Let's Build<br><span class="sg">Something</span><br><em>Extraordinary.</em></h2>
+      <p class="cdesc">Have a project, a challenge, or just an idea? Reach out — I'd love to hear about it and see how we can create something remarkable together.</p>
+      <div class="cch">
+        <a href="/cdn-cgi/l/email-protection#6d1e1408091f08050c032d0a000c0401430e0200" class="cchan"><div class="cico cg"><i class="fas fa-envelope"></i></div><div><div class="chl">Email</div><div class="chv"><span class="__cf_email__" data-cfemail="b2c1cbd7d6c0d7dad3dcf2d5dfd3dbde9cd1dddf">[email&#160;protected]</span></div></div></a>
+        <a href="https://wa.me/919999999999" target="_blank" rel="noopener" class="cchan"><div class="cico cw"><i class="fab fa-whatsapp"></i></div><div><div class="chl">WhatsApp</div><div class="chv">Message on WhatsApp</div></div></a>
+        <a href="https://instagram.com/syedrehan" target="_blank" rel="noopener" class="cchan"><div class="cico ci"><i class="fab fa-instagram"></i></div><div><div class="chl">Instagram</div><div class="chv">@syedrehan</div></div></a>
+        <a href="https://linkedin.com/in/syedrehan" target="_blank" rel="noopener" class="cchan"><div class="cico cl"><i class="fab fa-linkedin-in"></i></div><div><div class="chl">LinkedIn</div><div class="chv">linkedin.com/in/syedrehan</div></div></a>
+      </div>
+      <div class="avail"><div class="adot"></div>Currently accepting new projects</div>
+    </div>
+    <div class="rv fr d2">
+      <div class="cfw">
+        <div class="cfh">Send a Message</div>
+        <form id="cform" onsubmit="submitForm(event)">
+          <div class="frow">
+            <div class="fg"><label>Full Name</label><input type="text" placeholder="Your name" required></div>
+            <div class="fg"><label>Email</label><input type="email" placeholder="you@email.com" required></div>
+          </div>
+          <div class="frow">
+            <div class="fg"><label>Service</label><select><option>Select service…</option><option>Website Development</option><option>Video Editing</option><option>Graphic Design</option><option>Social Media Marketing</option><option>Branding &amp; Content</option><option>Full Package</option></select></div>
+            <div class="fg"><label>Budget</label><select><option>Select budget…</option><option>Under ₹10,000</option><option>₹10k – ₹25k</option><option>₹25k – ₹50k</option><option>₹50k – ₹1L</option><option>₹1L+</option></select></div>
+          </div>
+          <div class="fg"><label>Project Details</label><textarea placeholder="Tell me about your project, goals, and timeline…"></textarea></div>
+          <button type="submit" class="fsubmit"><i class="fas fa-paper-plane"></i><span>Send Message</span></button>
+        </form>
+        <div class="fsuccess" id="fs"><i class="fas fa-check-circle" style="font-size:1.6rem;display:block;margin-bottom:10px;color:rgba(134,239,172,.9)"></i>Message received. I'll respond within 24 hours.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+  <div class="footi">
+    <div class="foottop">
+      <!-- ============================================================
+           LOGO PLACEMENT — Replace "Syed Rehan" text with your logo image:
+           <img src="YOUR_LOGO.png" alt="Syed Rehan" style="height:36px;width:auto">
+           ============================================================ -->
+      <div><div class="fl">Syed Rehan</div><div class="flsub">Web · Video · Design · Marketing · India</div></div>
+      <div class="fnav"><a href="#about">About</a><a href="#skills">Skills</a><a href="#services">Services</a><a href="#portfolio">Portfolio</a><a href="#contact">Contact</a></div>
+      <div class="ficons">
+        <a href="https://instagram.com/syedrehan" target="_blank" class="ficon" title="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://facebook.com/syedrehan"  target="_blank" class="ficon" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://twitter.com/syedrehan"   target="_blank" class="ficon" title="Twitter / X"><i class="fab fa-x-twitter"></i></a>
+        <a href="https://linkedin.com/in/syedrehan" target="_blank" class="ficon" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://youtube.com/@syedrehan"  target="_blank" class="ficon" title="YouTube"><i class="fab fa-youtube"></i></a>
+        <a href="https://wa.me/919999999999"       target="_blank" class="ficon" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        <a href="mailto:syedrehan@gmail.com"       class="ficon"   title="Email"><i class="fas fa-envelope"></i></a>
+      </div>
+    </div>
+    <div class="footbot">
+      <div class="fcopy">© 2025 <span>Syed Rehan</span>. All rights reserved. Crafted with <span>♥</span> in India.</div>
+      <div class="fmade">Liquid Glass Theme · Aurora Design</div>
+    </div>
+  </div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+
+/* LOADER */
+let p=0;const pe=document.getElementById(‘lpct’);
+const pt=setInterval(()=>{p=Math.min(p+Math.random()*16,99);if(pe)pe.textContent=Math.round(p)+’%’;},100);
+window.addEventListener(‘load’,()=>{
+clearInterval(pt);
+if(pe)pe.textContent=‘100%’;
+setTimeout(()=>document.getElementById(‘loader’).classList.add(‘out’),2400);
+});
+
+/* CURSOR */
+let mx=0,my=0,fx=0,fy=0;
+const cd=document.getElementById(‘cd’),cg=document.getElementById(‘cg’);
+document.addEventListener(‘mousemove’,e=>{mx=e.clientX;my=e.clientY;cd.style.left=mx+‘px’;cd.style.top=my+‘px’;});
+(function loop(){fx+=(mx-fx)*.11;fy+=(my-fy)*.11;cg.style.left=fx+‘px’;cg.style.top=fy+‘px’;requestAnimationFrame(loop);})();
+document.querySelectorAll(‘a,button,input,textarea,select’).forEach(el=>{el.addEventListener(‘mouseenter’,()=>document.body.classList.add(‘hov’));el.addEventListener(‘mouseleave’,()=>document.body.classList.remove(‘hov’));});
+if(‘ontouchstart’in window){cd.style.display=cg.style.display=‘none’;document.body.style.cursor=‘auto’;}
+
+/* NAV + SCROLL TOP */
+window.addEventListener(‘scroll’,()=>{
+document.getElementById(‘nav’).classList.toggle(‘stuck’,scrollY>50);
+document.getElementById(‘st’).classList.toggle(‘show’,scrollY>500);
+});
+
+/* MOBILE MENU */
+const mnavEl       = document.getElementById(‘mnav’);
+const hbgEl        = document.getElementById(‘hbg’);
+const backdropEl   = document.getElementById(‘mnavBackdrop’);
+
+function openMenu(){
+mnavEl.classList.add(‘open’);
+hbgEl.classList.add(‘active’);
+backdropEl.classList.add(‘open’);
+document.body.style.overflow = ‘hidden’;
+}
+function closeMenu(){
+mnavEl.classList.remove(‘open’);
+hbgEl.classList.remove(‘active’);
+backdropEl.classList.remove(‘open’);
+document.body.style.overflow = ‘’;
+}
+function toggleMenu(){
+mnavEl.classList.contains(‘open’) ? closeMenu() : openMenu();
+}
+/* Close on Escape key */
+document.addEventListener(‘keydown’, e => { if(e.key === ‘Escape’) closeMenu(); });
+
+/* SCROLL REVEAL */
+const ro=new IntersectionObserver(entries=>{
+entries.forEach(e=>{
+if(e.isIntersecting){
+e.target.classList.add(‘on’);
+/* Trigger skill bar fills — works whether skcard has rv class or not */
+e.target.querySelectorAll(’.skfill[data-w]’).forEach(b=>{
+setTimeout(()=>{b.style.width=b.dataset.w+’%’;},250);
+});
+}
+});
+},{threshold:.07,rootMargin:‘0px 0px -20px 0px’});
+document.querySelectorAll(’.rv,.rv.fl,.rv.fr’).forEach(el=>ro.observe(el));
+
+/* Separate bar observer for skill cards (which may not have .rv class) */
+const so=new IntersectionObserver(entries=>{
+entries.forEach(e=>{
+if(e.isIntersecting){
+e.target.querySelectorAll(’.skfill[data-w]’).forEach(b=>{
+/* Only animate if not already set */
+if(!b.style.width||b.style.width===‘0px’||b.style.width===‘0%’){
+setTimeout(()=>{b.style.width=b.dataset.w+’%’;},350);
+}
+});
+so.unobserve(e.target); /* fire once */
+}
+});
+},{threshold:.2});
+document.querySelectorAll(’.skcard’).forEach(el=>so.observe(el));
+
+/* PORTFOLIO FILTER */
+document.querySelectorAll(’.pf’).forEach(btn=>{
+btn.addEventListener(‘click’,function(){
+document.querySelectorAll(’.pf’).forEach(b=>b.classList.remove(‘on’));
+this.classList.add(‘on’);const f=this.dataset.f;
+document.querySelectorAll(’.pi’).forEach(item=>{
+const show=f===‘all’||item.dataset.c===f;
+item.style.transition=‘opacity .5s,transform .5s’;
+item.style.opacity=show?‘1’:‘0.12’;
+item.style.transform=show?‘scale(1)’:‘scale(.95)’;
+item.style.pointerEvents=show?‘auto’:‘none’;
+});
+});
+});
+
+/* SMOOTH SCROLL */
+document.querySelectorAll(‘a[href^=”#”]’).forEach(a=>{a.addEventListener(‘click’,function(e){const t=document.querySelector(this.getAttribute(‘href’));if(t){e.preventDefault();scrollTo({top:t.getBoundingClientRect().top+scrollY-80,behavior:‘smooth’});}});});
+
+/* FORM */
+function submitForm(e){
+e.preventDefault();const btn=e.target.querySelector(’.fsubmit’);
+btn.innerHTML=’<i class="fas fa-spinner fa-spin"></i><span>Sending…</span>’;btn.disabled=true;
+setTimeout(()=>{document.getElementById(‘cform’).style.display=‘none’;document.getElementById(‘fs’).style.display=‘block’;},1800);
+}
+
+/* GLASS TILT — testimonial cards only (skcard/svccard use CSS :hover transforms) */
+document.querySelectorAll(’.tcard’).forEach(card=>{
+card.addEventListener(‘mousemove’,function(e){
+const r=this.getBoundingClientRect();
+const x=(e.clientX-r.left)/r.width-.5;
+const y=(e.clientY-r.top)/r.height-.5;
+this.style.transform=`rotateX(${-y*4}deg) rotateY(${x*4}deg)`;
+this.style.transition=‘transform .1s’;
+});
+card.addEventListener(‘mouseleave’,function(){
+this.style.transform=’’;
+this.style.transition=‘transform .6s cubic-bezier(0.23,1,0.32,1),border-color .3s,background .3s’;
+});
+});
+</script>
+
+</body>
+</html>
